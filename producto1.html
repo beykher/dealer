@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto - DealerStore</title>
+    <link rel="stylesheet" href="styles.prod.css">
+    <link rel="stylesheet" href="carrito.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>DealerStore.com</h1>
+    </header>
+
+    <div class="container">
+        <section id="product-detail">
+            <div class="product-detail">
+                <h2>Producto 1</h2>
+                <img src="img/Sin_título.webp" alt="Imagen del Producto 1">
+                <p><strong>Precio:</strong> $2,000 COP</p>
+                <p><strong>Descripción:</strong> Producto de alta calidad, ideal para quienes buscan una excelente opción. Disponible en diferentes presentaciones.</p>
+                <label for="quantity">Cantidad:</label>
+                <select id="quantity">
+                    <option value="1">1 unidad</option>
+                    <option value="2">2 unidades</option>
+                </select>
+                <button class="add-to-cart" data-name="Producto 1" data-price="2000" data-quantity="1">Añadir al Carrito</button>
+                <a href="htaml5.html"><button>Volver a la Tienda</button></a>
+                
+            </div>
+        </section>
+
+        <!-- Carrito de Compras -->
+        <div class="cart-container" id="cart" role="dialog" aria-labelledby="cart-title" aria-hidden="true">
+            <!-- Header del carrito -->
+            <div class="cart-header">
+                <h2 id="cart-title">Carrito de Compras</h2>
+                <button class="close-cart" onclick="closeCart()" aria-label="Cerrar el carrito">X</button>
+            </div>
+
+            <!-- Lista de items en el carrito -->
+            <div id="cart-items" class="cart-items">
+                <!-- Los productos se agregarán dinámicamente aquí -->
+            </div>
+
+            <!-- Total del carrito -->
+            <div id="cart-total" class="cart-total">
+                <!-- El total se actualizará dinámicamente -->
+            </div>
+
+            <!-- Acciones del carrito -->
+            <div class="cart-actions">
+                <button class="view-cart" onclick="toggleCart()" aria-label="Ver el carrito">Ver Carrito</button>
+                <a href="pagos.html" class="checkout-link">
+                    <button class="checkout-btn" onclick="checkout()" aria-label="Ir a la página de pagos">Pagar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 DealerStore. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para abrir y cerrar el carrito
+        function toggleCart() {
+            const cart = document.getElementById('cart');
+            const isHidden = cart.getAttribute('aria-hidden') === 'true';
+    
+            // Cambiar el estado de visibilidad del carrito
+            cart.setAttribute('aria-hidden', !isHidden);
+        }
+    
+        // Función para cerrar el carrito
+        function closeCart() {
+            const cart = document.getElementById('cart');
+            cart.setAttribute('aria-hidden', 'true');
+        }
+
+        // Función para agregar productos al carrito
+        document.querySelector('.add-to-cart').addEventListener('click', function () {
+            const productName = this.getAttribute('data-name');
+            const productPrice = this.getAttribute('data-price');
+            const productQuantity = document.getElementById('quantity').value;
+
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            
+            // Crear un nuevo item en el carrito
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('cart-item');
+            itemDiv.innerHTML = `
+                <p>${productName} - ${productQuantity} unidad(es)</p>
+                <p>Precio: $${productPrice * productQuantity}</p>
+            `;
+            cartItems.appendChild(itemDiv);
+
+            // Actualizar el total del carrito
+            let currentTotal = parseFloat(cartTotal.innerText.replace('Total: $', '') || 0);
+            currentTotal += productPrice * productQuantity;
+            cartTotal.innerText = `Total: $${currentTotal}`;
+
+            // Abrir el carrito
+            toggleCart();
+        });
+
+        // Función para proceder al checkout (simulando el pago)
+        function checkout() {
+            alert('Procediendo al pago...');
+        }
+    </script>
+</body>
+</html>

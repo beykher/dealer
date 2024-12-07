@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto - Dope</title>
+    <link rel="stylesheet" href="styles.prod.css">
+    <link rel="stylesheet" href="styles.button.css">
+    <link rel="stylesheet" href="styles.cart.css">
+<link rel="stylesheet" href="styles.cart_2.css">
+</head>
+<body>
+    <header>
+        <h1>DealerStore.com</h1>
+    </header>
+
+    <div class="product-detail">
+        <h2>Producto Premium</h2>
+        <img src="img/producto2.jpg" alt="Producto Premium">
+        <p><strong>Precio:</strong> $2,200 COP y $20,000 COP</p>
+        <p><strong>Descripción:</strong> Producto premium disponible en diferentes presentaciones para usuarios frecuentes.</p>
+
+        <p><strong>Cantidad:</strong>
+            <select id="cantidad">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </p>
+        <button class="add-to-cart" data-name="Producto Premium" data-price="20000">Añadir al Carrito</button>
+        <button id="toggle-cart-button" onclick="toggleCart()">Ver Carrito <span class="cart-count">0</span></button>
+        <a href="htaml5.html"><button>Volver a la Tienda</button></a>
+        <!-- Contenedor del carrito -->
+        <div id="cart">
+            <button onclick="closeCart()">X</button>
+            <h3>Carrito</h3>
+            <div id="cart-items"></div>
+            <p id="cart-total">Total: $0 COP</p>
+            <!-- Botón de Pago -->
+            <button id="pay-button" onclick="processPayment()" style="display: none;">Pagar</button>
+        </div>
+        
+        
+        
+    </div>
+
+    <footer>
+        <p>© 2024 DealerStore. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

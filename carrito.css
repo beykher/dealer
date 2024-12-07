@@ -1,0 +1,129 @@
+/* Variables para colores y tamaños */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f4f4f4;
+    --highlight-color: #ff9800;
+    --font-family: 'Arial', sans-serif;
+    --border-radius: 8px;
+    --padding: 10px;
+    --max-width: 400px;
+}
+
+/* Estilos generales para el contenedor del carrito */
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: var(--max-width);
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 9999;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-container[aria-hidden="false"] {
+    right: 0; /* Mueve el carrito hacia la pantalla cuando es visible */
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: var(--padding);
+}
+
+.cart-header h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: var(--padding);
+    padding-right: var(--padding);
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: var(--padding);
+    padding: var(--padding);
+    border-top: 2px solid #ddd;
+    color: var(--primary-color);
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--padding);
+}
+
+/* Botones */
+button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: var(--font-family);
+}
+
+button:hover {
+    background-color: var(--highlight-color);
+}
+
+.view-cart {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    flex-grow: 1;
+}
+
+.checkout-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.checkout-btn:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Enlace de pago */
+.checkout-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Estilos móviles: Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .cart-container {
+        width: 100%;
+    }
+
+    .cart-header h2 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}

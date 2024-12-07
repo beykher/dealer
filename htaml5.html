@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DealerStore - Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyByvb2J2VNgV5OYwniqH5NZIc1ugVguYhg",
+      authDomain: "dealershop-248f5.firebaseapp.com",
+      projectId: "dealershop-248f5",
+      storageBucket: "dealershop-248f5.firebasestorage.app",
+      messagingSenderId: "274751201236",
+      appId: "1:274751201236:web:4c1c6a6a07a5f0b12d8041",
+      measurementId: "G-32E4EQYLM1"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+<body>
+    <header>
+        <h1>DealerStore</h1>
+    </header>
+
+    <div class="container">
+        <section id="main">
+            <h2>Productos Destacados</h2>
+            <div id="products" class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product">
+                    <h3>Producto 1</h3>
+                    <img src="img/producto1.jpg" alt="Imagen de Producto 1">
+                    <p><strong>Precio:</strong> $2,000 COP</p>
+                    <p><strong>Descripción:</strong> Producto de alta calidad...</p>
+                    <a href="producto1.html"><button class="animate-btn">Ver Detalles</button></a>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product">
+                    <h3>Producto 2</h3>
+                    <img src="img/producto1.jpg" alt="Imagen de Producto 2">
+                    <p><strong>Precio:</strong> $2,200 COP</p>
+                    <p><strong>Descripción:</strong> Producto de alta calidad...</p>
+                    <a href="producto2.html"><button class="animate-btn">Ver Detalles</button></a>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product">
+                    <h3>Producto 3</h3>
+                    <img src="img/producto1.jpg" alt="Imagen de Producto 3">
+                    <p><strong>Precio:</strong> $30,000 COP</p>
+                    <p><strong>Descripción:</strong> Producto de alta pureza...</p>
+                    <a href="producto3.html"><button class="animate-btn">Ver Detalles</button></a>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product">
+                    <h3>Producto 4</h3>
+                    <img src="img/producto1.jpg" alt="Imagen de Producto 4">
+                    <p><strong>Precio:</strong> $5,000 COP</p>
+                    <p><strong>Descripción:</strong> Producto de alta calidad...</p>
+                    <a href="producto4.html"><button class="animate-btn">Ver Detalles</button></a>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="product">
+                    <h3>Producto 5</h3>
+                    <img src="img/producto1.jpg" alt="Imagen de Producto 5">
+                    <p><strong>Precio:</strong> $8,000 COP</p>
+                    <p><strong>Descripción:</strong> Producto de alta pureza...</p>
+                    <a href="producto5.html"><button class="animate-btn">Ver Detalles</button></a>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="product">
+                    <h3>Producto 6</h3>
+                    <img src="img/producto1.jpg" alt="Imagen de Producto 6">
+                    <p><strong>Precio:</strong> $4,000 COP</p>
+                    <p><strong>Descripción:</strong> Producto conocido por su calidad...</p>
+                    <a href="producto6.html"><button class="animate-btn">Ver Detalles</button></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="cart-icon" onclick="showCart()">
+        🛒
+        <span class="cart-count">0</span>
+    </div>
+
+    <div id="cart" class="cart">
+        <h3>Carrito</h3>
+        <div id="cart-items">
+            <p>No hay productos en el carrito</p>
+        </div>
+        <div class="cart-total">
+            <strong>Total: </strong><span id="cart-total">0 COP</span>
+        </div>
+        <button class="checkout-btn">Pagar</button>
+        <button class="close-cart-btn" onclick="closeCart()">Cerrar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

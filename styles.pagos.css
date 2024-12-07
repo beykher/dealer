@@ -1,0 +1,81 @@
+/* Estilos generales para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Títulos principales */
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #0070ba;
+    margin-bottom: 15px;
+}
+
+/* Contenedor principal */
+.payment-method {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 500px;
+}
+
+/* Botón de pago */
+button {
+    background-color: #0070ba;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+/* Efecto hover para los botones */
+button:hover {
+    background-color: #005fa3;
+    transform: translateY(-2px); /* Efecto de desplazamiento */
+}
+
+/* Efecto para el formulario de PayPal */
+form {
+    margin-top: 20px;
+}
+
+/* Estilo para los enlaces (opcional si se usa en la página) */
+a {
+    color: #0070ba;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Ajustes para dispositivos pequeños (responsive design) */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
